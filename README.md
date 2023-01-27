@@ -13,7 +13,7 @@
 ### Você pode:
 
 * Utilizar qualquer linguagem de preprocessador css ou css puro;
-* Utilizar bibliotecas css;
+* Utilizar bibliotecas javascript;
 * Utilizar frameworks javascript React ou Vue.JS
 * Utilizar HTML5
 
