@@ -1,7 +1,10 @@
 # Teste para candidatos à vaga de desenvolvedor Front-end
 
 > ![Logo Holistix](https://www.holistix.com.br/arquivos/logo-loja-2x.png?v=637677734139100000)
->
+
+> Este é o protótipo para aplicar na página de produto do nosso novo lançamento: https://www.holistix.com.br/home-spray/p
+
+> O objetivo é dar mais detalhes além da descrição e das fotos principais. Em qualquer outra página de produto no nosso site você encontrará uma estrutura similar.
 
 ## Instruções:
 
