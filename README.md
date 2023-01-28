@@ -6,6 +6,8 @@
 
 > O objetivo é dar mais detalhes além da descrição e das fotos principais. Em qualquer outra página de produto no nosso site você encontrará uma estrutura similar.
 
+> O prazo são 48h a partir do momento que vc recebeu seu teste!
+
 ## Instruções:
 
 1. Faça um fork deste repositório;
