@@ -86,15 +86,59 @@ html {
   padding: 30px 20px;
   text-align: center;
 }
+@media (min-width: 1024px) {
+  .section {
+    padding: 2rem;
+  }
+}
 .section.--general-info {
   background-color: #f9ffd7;
-}
-.section.--general-info .subtitle {
-  padding: 0 1rem;
 }
 .section.--how-to-use {
   background-color: #423b34;
   color: #f0ebde;
+}
+.section.--general-info > .subtitle {
+  padding: 0 1rem;
+}
+@media (min-width: 1024px) {
+  .section.--general-info {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    grid-template-rows: auto 30px;
+  }
+  .section.--general-info > .head-title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: end;
+  }
+  .section.--general-info > .subtitle {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: start;
+  }
+  .section.--general-info > .picture-piramide {
+    grid-column: 2/3;
+    grid-row: span 3;
+    max-width: 770px;
+  }
+  .section.--general-info > .notes-list {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+.section.--how-to-use > .subtitle {
+  margin-bottom: 30px;
+}
+.section.--how-to-use > .warning {
+  font-size: 14px;
+}
+@media (min-width: 1024px) {
+  .notes-list {
+    max-width: 720px;
+    padding: 70px 2rem 2rem;
+    justify-self: center;
+  }
 }
 .notes-list > .notes {
   margin-bottom: 1rem;
@@ -122,4 +166,10 @@ html {
 }
 .note-title.--purple {
   color: #63407d;
+}
+.picture-spray {
+  position: relative;
+  max-width: none;
+  width: 100vw;
+  margin: 0 -20px 30px;
 }

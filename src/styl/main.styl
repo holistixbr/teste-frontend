@@ -32,18 +32,54 @@ html
 .section
   padding 30px 20px
   text-align: center
+  @media (min-width: desktop)
+    padding 2rem
   &.--general-info
     background-color yellow
-    .subtitle
-      padding 0 1rem
   &.--how-to-use
     background-color brown-bg
     color beige
 
 
+// General info
+.section.--general-info
+  > .subtitle
+    padding 0 1rem
+  @media (min-width: desktop)
+    display grid
+    grid-template-columns 2fr 1.5fr
+    grid-template-rows auto 30px
+    > .head-title
+      grid-column 1/2
+      grid-row 1/2
+      align-self: end;
+    > .subtitle
+      grid-column 1/2
+      grid-row 2/3
+      align-self: start;
+    > .picture-piramide
+      grid-column 2/3
+      grid-row span 3
+      max-width: 770px
+    > .notes-list
+      grid-column 1/2
+      grid-row 3/4
+
+// How to use
+.section.--how-to-use
+  > .subtitle
+    margin-bottom 30px
+  > .warning
+    font-size: small
+
+
 
 // Notes list
 .notes-list
+  @media (min-width: desktop)
+    max-width 720px
+    padding 70px 2rem 2rem
+    justify-self: center
   > .notes
     margin-bottom 1rem
     &.--orange::marker
@@ -69,6 +105,12 @@ html
     color purple
 
 
+// Image Spray
+.picture-spray
+  position relative
+  max-width: none
+  width 100vw
+  margin 0 -20px 30px
 
 
 
