@@ -1,1 +1,75 @@
-@require './variables/breakpoints.styl'
+@require './fonts.styl';
+@require './reset.styl';
+@require './variables/fonts.styl';
+@require './variables/colors.styl';
+@require './variables/breakpoints.styl';
+
+
+body,
+html
+  font-family MabryPro-Regular, sans-serif
+  font-weight normal
+  font-size medium
+  color brown-text
+
+
+// Page Wrapper
+.page-wrapper
+  display grid
+  grid-template-rows 1fr 1fr 
+  height 100%
+
+
+// Page h1
+.head-title
+  margin-bottom 10px
+  font-family: Recoleta, serif
+  font-size: big
+  line-height 43px
+
+
+// Page sections
+.section
+  padding 30px 20px
+  text-align: center
+  &.--general-info
+    background-color yellow
+    .subtitle
+      padding 0 1rem
+  &.--how-to-use
+    background-color brown-bg
+    color beige
+
+
+
+// Notes list
+.notes-list
+  > .notes
+    margin-bottom 1rem
+    &.--orange::marker
+      color orange
+    &.--green::marker
+      color green
+    &.--purple::marker
+      color purple
+
+
+// Page h3 - Note Title
+.note-title
+  &::before
+    display inline-block
+    content attr(data-icon);
+    padding-right 5px
+    font-size medium
+  &.--orange
+    color orange
+  &.--green
+    color green
+  &.--purple
+    color purple
+
+
+
+
+
+
