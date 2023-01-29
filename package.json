@@ -1,0 +1,19 @@
+{
+  "name": "teste-frontend-holistix",
+  "version": "1.0.0",
+  "description": "A minimal holistix front-end test",
+  "main": "index.html",
+  "author": "Thamires Helaysa",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThamyHelaysa/teste-frontend-holistix.git"
+  },
+  "dependencies": {
+    "stylus": "^0.59.0"
+  },
+  "scripts": {
+    "css": "stylus ./src/styl/main.styl -o ./src/css",
+    "stylus": "stylus -w ./src/styl/main.styl -o ./src/css"
+  }
+}
