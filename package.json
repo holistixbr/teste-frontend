@@ -10,10 +10,24 @@
     "url": "git+https://github.com/ThamyHelaysa/teste-frontend-holistix.git"
   },
   "dependencies": {
+    "autoprefixer-stylus": "^1.0.0",
     "stylus": "^0.59.0"
   },
   "scripts": {
-    "css": "stylus ./src/styl/main.styl -o ./src/css",
+    "css": "stylus -u autoprefixer-stylus ./src/styl/main.styl -o ./src/css",
     "stylus": "stylus -w ./src/styl/main.styl -o ./src/css"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 8",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ]
 }

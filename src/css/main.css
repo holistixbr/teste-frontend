@@ -1,3 +1,4 @@
+/* autoprefixer grid: autoplace */
 @font-face {
   font-family: Recoleta;
   font-weight: 400;
@@ -61,7 +62,8 @@ h6 {
 ul,
 ol,
 li {
-  padding-inline-start: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
   list-style: none;
 }
 body,
@@ -71,9 +73,13 @@ html {
   font-size: 18px;
   color: #413b35;
 }
+@media (min-width: 1024px) {
+  body,
+  html {
+    font-size: calc(18px  + 2px);
+  }
+}
 .page-wrapper {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
   height: 100%;
 }
 .head-title {
@@ -103,28 +109,42 @@ html {
 }
 @media (min-width: 1024px) {
   .section.--general-info {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: auto auto;
+        grid-template: "title    piramide" "subtitle piramide" "list     piramide";
+    -ms-grid-columns: 2fr 1.5fr;
     grid-template-columns: 2fr 1.5fr;
     grid-template-rows: auto 30px;
   }
   .section.--general-info > .head-title {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    align-self: end;
+    grid-area: title;
+    -ms-grid-row-align: end;
+        align-self: end;
   }
   .section.--general-info > .subtitle {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    align-self: start;
+    grid-area: subtitle;
+    -ms-grid-row-align: start;
+        align-self: start;
   }
   .section.--general-info > .picture-piramide {
-    grid-column: 2/3;
-    grid-row: span 3;
+    grid-area: piramide;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 770px;
   }
   .section.--general-info > .notes-list {
-    grid-column: 1/2;
-    grid-row: 3/4;
+    grid-area: list;
   }
 }
 .section.--how-to-use > .subtitle {
@@ -133,11 +153,99 @@ html {
 .section.--how-to-use > .warning {
   font-size: 14px;
 }
+.section.--how-to-use > .picture-spray {
+  position: relative;
+  max-width: none;
+  width: 100vw;
+  margin: 0 -20px 30px;
+}
 @media (min-width: 1024px) {
-  .notes-list {
-    max-width: 720px;
-    padding: 70px 2rem 2rem;
-    justify-self: center;
+  .section.--how-to-use {
+    padding: 2rem 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto auto;
+        grid-template: "spray title" "spray subtitle" "spray empty" "spray warning";
+    -ms-grid-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 54px 1fr 30px;
+  }
+  .section.--how-to-use > .head-title {
+    grid-area: title;
+    -ms-grid-row-align: end;
+        align-self: end;
+  }
+  .section.--how-to-use > .subtitle {
+    max-width: 440px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    grid-area: subtitle;
+    -ms-grid-row-align: start;
+        align-self: start;
+  }
+  .section.--how-to-use > .picture-spray {
+    width: auto;
+    margin: -2rem 0;
+    grid-area: spray;
+  }
+  .section.--how-to-use > .warning {
+    padding: 0 2rem;
+    grid-area: warning;
+    -ms-grid-row-align: center;
+        align-self: center;
+    font-size: calc(14px  + 2px);
+  }
+  .section.--how-to-use > .head-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .section.--how-to-use > .subtitle {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .section.--general-info > .head-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .section.--general-info > .subtitle {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .section.--general-info > .picture-piramide {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+  }
+  .section.--general-info > .notes-list {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .section.--how-to-use > .head-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .section.--how-to-use > .head-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .section.--how-to-use > .subtitle {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .section.--how-to-use > .subtitle {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .section.--how-to-use > .picture-spray {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 1;
+  }
+  .section.--how-to-use > .warning {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
   }
 }
 .notes-list > .notes {
@@ -151,6 +259,14 @@ html {
 }
 .notes-list > .notes.--purple::marker {
   color: #63407d;
+}
+@media (min-width: 1024px) {
+  .notes-list {
+    max-width: 720px;
+    padding: 70px 2rem 2rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 .note-title::before {
   display: inline-block;
@@ -166,10 +282,4 @@ html {
 }
 .note-title.--purple {
   color: #63407d;
-}
-.picture-spray {
-  position: relative;
-  max-width: none;
-  width: 100vw;
-  margin: 0 -20px 30px;
 }

@@ -1,9 +1,10 @@
+/* autoprefixer grid: autoplace */
+
 @require './fonts.styl';
 @require './reset.styl';
 @require './variables/fonts.styl';
 @require './variables/colors.styl';
 @require './variables/breakpoints.styl';
-
 
 body,
 html
@@ -11,12 +12,12 @@ html
   font-weight normal
   font-size medium
   color brown-text
+  @media (min-width: desktop)
+    font-size "calc(%s  + 2px)" % (medium)
 
 
 // Page Wrapper
 .page-wrapper
-  display grid
-  grid-template-rows 1fr 1fr 
   height 100%
 
 
@@ -46,24 +47,29 @@ html
   > .subtitle
     padding 0 1rem
   @media (min-width: desktop)
-    display grid
-    grid-template-columns 2fr 1.5fr
-    grid-template-rows auto 30px
+    display: grid;
+    grid-template: 
+      "title    piramide"\
+      "subtitle piramide"\
+      "list     piramide"\
+
+    grid-template-columns: 2fr 1.5fr
+    grid-template-rows: auto 30px
+
     > .head-title
-      grid-column 1/2
-      grid-row 1/2
+      grid-area: title
       align-self: end;
     > .subtitle
-      grid-column 1/2
-      grid-row 2/3
+      grid-area: subtitle
       align-self: start;
     > .picture-piramide
-      grid-column 2/3
-      grid-row span 3
-      max-width: 770px
+      grid-area: piramide
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 770px;
     > .notes-list
-      grid-column 1/2
-      grid-row 3/4
+      grid-area: list
 
 // How to use
 .section.--how-to-use
@@ -71,15 +77,45 @@ html
     margin-bottom 30px
   > .warning
     font-size: small
+  > .picture-spray
+    position relative
+    max-width: none
+    width 100vw
+    margin 0 -20px 30px
 
+  @media (min-width: desktop)
+    padding: 2rem 0
+    display: grid;
+    grid-template: 
+      "spray title"\
+      "spray subtitle"\
+      "spray empty"\
+      "spray warning"\
+
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 54px 1fr 30px;
+
+    > .head-title
+      grid-area: title
+      align-self: end;
+    > .subtitle
+      max-width 440px
+      justify-self: center
+      grid-area: subtitle
+      align-self: start;
+    > .picture-spray
+      width auto
+      margin -2rem 0
+      grid-area: spray
+    > .warning
+      padding: 0 2rem
+      grid-area: warning;
+      align-self: center;
+      font-size "calc(%s  + 2px)" % (small)
 
 
 // Notes list
 .notes-list
-  @media (min-width: desktop)
-    max-width 720px
-    padding 70px 2rem 2rem
-    justify-self: center
   > .notes
     margin-bottom 1rem
     &.--orange::marker
@@ -88,7 +124,11 @@ html
       color green
     &.--purple::marker
       color purple
-
+  @media (min-width: desktop)
+    max-width 720px
+    padding 70px 2rem 2rem
+    justify-self: center
+    
 
 // Page h3 - Note Title
 .note-title
@@ -103,15 +143,6 @@ html
     color green
   &.--purple
     color purple
-
-
-// Image Spray
-.picture-spray
-  position relative
-  max-width: none
-  width 100vw
-  margin 0 -20px 30px
-
 
 
 
